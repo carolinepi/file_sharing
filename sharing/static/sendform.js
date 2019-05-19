@@ -1,23 +1,28 @@
-$(document).ready(function(){
+function upload(event) {
+    event.preventDefault();
+    var data = new FormData($('form').get(0));
 
-	var $uploadForm = $('.form-upload');
-	$uploadForm.submit(function(event){
-		event.preventDefault();
-		var $formData = $uploadForm.serialize();
-		var $thisURL = $uploadForm.attr('data-url') || window.location.href;
-		$.ajax({
-			method:'POST',
-			url: $thisURL,
-			data: $formData,
-			success: handleSuccess,
-			error: handleError,
-		});
-        function handleSuccess(data){
-			console.log(data.message);
-			$uploadForm[0].reset()
-		}
-		function handleError(ThrowError){
-			console.log(ThrowError);
-		}
-	});
+    $.ajax({
+        url: $(this).attr('data-url'),
+        type: $(this).attr('method'),
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success: handleSuccess(data),
+        error: handleError,
+    });
+    return false;
+}
+
+function handleSuccess(data){
+    alert('Success uploading!');
+//    data.reset()
+}
+function handleError(ThrowError){
+    console.log(ThrowError);
+}
+
+$(function() {
+    $('form').submit(upload);
 });

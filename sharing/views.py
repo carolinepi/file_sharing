@@ -49,17 +49,12 @@ def handler404(request):
 
 def add_new(request):
     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
-    print(form_upload)
-    print(form_upload.is_valid(), request.is_ajax())
     if form_upload.is_valid() and request.is_ajax():
         new_file = form_upload.save(commit=False)
         new_file.author = request.user
         new_file.created_date = timezone.now()
         new_file.save()
-        data = {
-            'message': 'form is saved'
-        }
-        return JsonResponse(data)
+        return redirect('index')
     form_upload = UploadForm()
     return render(request, 'sharing/index.html', {'form_upload': form_upload})
 
