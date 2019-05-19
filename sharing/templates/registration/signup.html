@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+
+{% block head %}
+<title>Sign up</title>
+{% endblock %}
+
+{% block active_link %}
+  <li><a href="{% url 'index' %}">Home</a></li>
+  {% if user.is_authenticated %}
+  <li><a href="{% url 'my_uploading' %}">My uploading</a></li>
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <center><h1>Sign up</h1></center>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form_signup|crispy }}
+            <center><button type="submit" class="btn btn-primary">Sign up</button></center>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
+

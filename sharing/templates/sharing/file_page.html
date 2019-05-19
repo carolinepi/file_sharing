@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>{{ file }}</title>
+<style>
+.btn {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+  background-color: RoyalBlue;
+}
+</style>
+{% endblock %}
+
+{% block active_link %}
+  <li><a href="{% url 'index' %}">Home</a></li>
+  {% if user.is_authenticated %}
+    <li class="active"><a href="{% url 'my_uploading' %}">My uploading</a></li>
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+<h1>{{ file }}</h1>
+<a href="{{ MEDIA_URL }}{{ file.file }}" download>
+  <button class="btn"><i class="fa fa-download"></i>Download</button>
+</a>
+
+{% endblock %}

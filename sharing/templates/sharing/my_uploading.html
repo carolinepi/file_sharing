@@ -1,0 +1,95 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>My uploading</title>
+{% endblock %}
+
+{% block active_link %}
+  <li><a href="{% url 'index' %}">Home</a></li>
+  {% if user.is_authenticated %}
+    <li class="active"><a href="{% url 'my_uploading' %}">My uploading</a></li>
+  {% endif %}
+{% endblock %}
+
+{% block body %}
+<h1>My uploading</h1>
+
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById("sectionCurrent").style.display = "none";
+        document.getElementById("sectionBlocked").style.display = "none";
+    };
+
+    function changeSection(value) {
+        if (value == "sectionAll") {
+            document.getElementById("sectionAll").style.display = "";
+            document.getElementById("sectionCurrent").style.display = "none";
+            document.getElementById("sectionBlocked").style.display = "none";
+        } else if (value == "sectionCurrent"){
+            document.getElementById("sectionAll").style.display = "none";
+            document.getElementById("sectionCurrent").style.display = "";
+            document.getElementById("sectionBlocked").style.display = "none";
+        } else if (value == "sectionBlocked"){
+            document.getElementById("sectionAll").style.display = "none";
+            document.getElementById("sectionCurrent").style.display = "none";
+            document.getElementById("sectionBlocked").style.display = "";
+        }
+    }
+</script>
+
+<div class="btn-group" role="group" aria-label="Basic example">
+  <button type="button" class="btn btn-secondary" onclick="changeSection('sectionAll')">All</button>
+  <button type="button" class="btn btn-secondary" onclick="changeSection('sectionCurrent')">Current</button>
+  <button type="button" class="btn btn-secondary" onclick="changeSection('sectionBlocked')">Blocked</button>
+</div>
+
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">File</th>
+      <th scope="col">Created date</th>
+      <th scope="col">Ended date</th>
+    </tr>
+  </thead>
+
+  <tbody id="sectionAll">
+  {% for post in file_posts|dictsortreversed:"created_date" %}
+    <tr>
+      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
+      <td>{{ post.file }}</td>
+      <td>{{ post.created_date }}</td>
+      <td>{{ post.ended_date }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+
+  <tbody id="sectionCurrent">
+  {% for post in file_posts|dictsortreversed:"created_date" %}
+  {% if post.is_worked %}
+    <tr>
+      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
+      <td>{{ post.file }}</td>
+      <td>{{ post.created_date }}</td>
+      <td>{{ post.ended_date }}</td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>
+
+  <tbody id="sectionBlocked">
+  {% for post in file_posts|dictsortreversed:"created_date" %}
+  {% if not post.is_worked %}
+    <tr>
+      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
+      <td>{{ post.file }}</td>
+      <td>{{ post.created_date }}</td>
+      <td>{{ post.ended_date }}</td>
+    </tr>
+  {% endif %}
+  {% endfor %}
+  </tbody>
+
+</table>
+{% endblock %}
+
