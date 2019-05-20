@@ -25,19 +25,6 @@ def show_files(request):
     return render(request, 'sharing/my_uploading.html', {'file_posts': file_posts})
 
 
-# def add_new(request):
-#     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
-#     print(request.FILES)
-#     if form_upload.is_valid() and request.method == 'POST':
-#         new_file = form_upload.save(commit=False)
-#         new_file.author = request.user
-#         new_file.created_date = timezone.now()
-#         new_file.save()
-#         return redirect('index')
-#     form_upload = UploadForm()
-#     return render(request, 'sharing/index.html', {'form_upload': form_upload})
-
-
 def new_page(request, pk):
     file = get_object_or_404(UploadModel, pk=pk)
     return render(request, 'sharing/file_page.html', {'file': file})
@@ -53,6 +40,11 @@ def add_new(request):
         new_file = form_upload.save(commit=False)
         new_file.author = request.user
         new_file.created_date = timezone.now()
+        print(new_file.ended_date, timezone.now())
+        if new_file.ended_date > timezone.now():
+            print(True)
+        elif new_file.ended_date > timezone.now():
+            print(False)
         new_file.save()
         return redirect('index')
     form_upload = UploadForm()

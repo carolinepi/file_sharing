@@ -1,7 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block head %}
 <title>{{ file }}</title>
+<script>
+var countDownDate = new Date("{{file.ended_date|safe}}").getTime();
+</script>
+<script type="text/javascript" src="{% static 'countdown.js' %}"></script>
 <style>
 .btn {
   background-color: DodgerBlue;
@@ -16,6 +22,12 @@
 .btn:hover {
   background-color: RoyalBlue;
 }
+
+#countdown{
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
 </style>
 {% endblock %}
 
@@ -28,8 +40,8 @@
 
 {% block body %}
 <h1>{{ file }}</h1>
-<a href="{{ MEDIA_URL }}{{ file.file }}" download>
+<div id="countdown"></div>
+<a href="{{ MEDIA_URL }}{{ file.file }}" download id="download">
   <button class="btn"><i class="fa fa-download"></i>Download</button>
 </a>
-
 {% endblock %}

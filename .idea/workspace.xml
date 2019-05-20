@@ -3,7 +3,45 @@
   <component name="ChangeListManager">
     <list default="true" id="76cc1e05-f059-46f3-b44c-0b1b76473d58" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sharing/static/sendform.js" beforeDir="false" afterPath="$PROJECT_DIR$/sharing/static/sendform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/media/uploads/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/db_59Q2GoD.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/db_77Ltky7.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/db_YVEMzVI.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/db_lP9Y0VK.sqlite3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/manage_LvAMTNi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/manage_vjXQhTi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use_8shw9Vg.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use_hsBc5WS.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use_plRlzNp.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use_sK9HHQw.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/murphy_raymond_english_grammar_in_use_zafvgMl.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_54hjPso.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_6A3NmQY.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_7jzOV3W.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_LdQDh7d.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_NuBLlG4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_dNwwpeb.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_g3fCK7y.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_q5hbAq7.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/settings_zeNZKxL.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/simulate.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/simulate_ZCTZrTI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/txt.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/media/uploads/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_FQyncXo.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_Fn2Zg2p.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_MXVlu60.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_Yi71V9a.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_a3rHCRk.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_bycXeLm.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_eY5MG9Q.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_q20Eld4.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/urls_syUVEOT.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/media/uploads/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sharing/static/sendform.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sharing/templates/sharing/file_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/sharing/templates/sharing/file_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sharing/templates/sharing/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/sharing/templates/sharing/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sharing/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/sharing/views.py" afterDir="false" />
     </list>
@@ -16,31 +54,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sharing/static/sendform.js">
+        <entry file="file://$PROJECT_DIR$/sharing/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="413">
+              <caret line="26" selection-start-line="26" selection-end-line="26" />
+              <folding>
+                <element signature="e#0#45#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sharing/views.py">
+        <entry file="file://$PROJECT_DIR$/sharing/static/countdown.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="677">
-              <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#45#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="44">
+              <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/file_page.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="339">
+              <caret line="20" column="36" selection-start-line="20" selection-end-line="21" />
             </state>
           </provider>
         </entry>
@@ -62,11 +100,14 @@
       <find>uploadForm</find>
       <find>$uploadForm</find>
       <find>$uploadFrom</find>
+      <find>demo</find>
+      <find>btn</find>
     </findStrings>
     <replaceStrings>
       <replace>form_upload</replace>
       <replace>uploadFrom</replace>
       <replace>$uploadForm</replace>
+      <replace>countdown</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -84,7 +125,6 @@
         <option value="$PROJECT_DIR$/sharing/urls.py" />
         <option value="$PROJECT_DIR$/sharing/models.py" />
         <option value="$PROJECT_DIR$/sharing/templates/sharing/my_uploading.html" />
-        <option value="$PROJECT_DIR$/sharing/templates/sharing/file_page.html" />
         <option value="$PROJECT_DIR$/sharing/templates/registration/signup.html" />
         <option value="$PROJECT_DIR$/sharing/templates/registration/login.html" />
         <option value="$PROJECT_DIR$/sharing/templates/base.html" />
@@ -93,9 +133,11 @@
         <option value="$PROJECT_DIR$/file_sharing/settings.py" />
         <option value="$PROJECT_DIR$/sharing/static/jquery-3.1.1.min.js" />
         <option value="$PROJECT_DIR$/sharing/forms.py" />
-        <option value="$PROJECT_DIR$/sharing/templates/sharing/index.html" />
         <option value="$PROJECT_DIR$/sharing/static/sendform.js" />
+        <option value="$PROJECT_DIR$/sharing/templates/sharing/index.html" />
         <option value="$PROJECT_DIR$/sharing/views.py" />
+        <option value="$PROJECT_DIR$/sharing/templates/sharing/file_page.html" />
+        <option value="$PROJECT_DIR$/sharing/static/countdown.js" />
       </list>
     </option>
   </component>
@@ -133,6 +175,19 @@
               <item name="file_sharing" type="462c0819:PsiDirectoryNode" />
               <item name="sharing" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file_sharing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file_sharing" type="462c0819:PsiDirectoryNode" />
+              <item name="sharing" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="file_sharing" type="b2602c69:ProjectViewProjectNode" />
+              <item name="file_sharing" type="462c0819:PsiDirectoryNode" />
+              <item name="sharing" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+              <item name="sharing" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -183,7 +238,7 @@
     <frame x="83" y="25" width="1837" height="1055" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.133914" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.133914" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -307,13 +362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/file_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sharing/templates/registration/signup.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
@@ -346,13 +394,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sharing/static/js/sendform.js" />
-    <entry file="file://$PROJECT_DIR$/sharing/static/datetime.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file_sharing/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="679">
@@ -385,27 +426,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/index.html">
+    <entry file="file://$PROJECT_DIR$/sharing/static/sendform.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="374">
+          <caret line="17" column="29" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sharing/static/sendform.js">
+    <entry file="file://$PROJECT_DIR$/sharing/static/datetime.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="32" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
+        <state relative-caret-position="44">
+          <caret line="2" column="20" lean-forward="true" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sharing/static/sendform_upload.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/sharing/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="56" column="32" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="32" />
+        <state relative-caret-position="413">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
           <folding>
             <element signature="e#0#45#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" column="14" selection-start-line="1" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sharing/templates/sharing/file_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="339">
+          <caret line="20" column="36" selection-start-line="20" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sharing/static/countdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" column="25" selection-start-line="2" selection-start-column="25" selection-end-line="2" selection-end-column="25" />
         </state>
       </provider>
     </entry>
