@@ -1,6 +1,5 @@
 from django.urls import path
 from . import views
-from sharing.views import print_hello
 
 
 urlpatterns = [
@@ -8,11 +7,9 @@ urlpatterns = [
     path('my_uploading/', views.show_files, name='my_uploading'),
     path('signup/', views.signup, name='signup'),
     path('<int:pk>/', views.new_page, name='new_page'),
-    path('hello/', views.print_hello, name="print_hello"),
     path('accounts/login/', views.log_in, name="log_in")
 ]
 
 handler404 = views.handler404
-print_hello(repeat=10, repeat_until=None)
 
 

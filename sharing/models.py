@@ -8,8 +8,8 @@ class UploadModel(models.Model):
     title = models.CharField(max_length=100)
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     file = models.FileField(upload_to='uploads/', blank=False, null=False)
-    created_date = models.DateTimeField(default=timezone.now)
-    ended_date = models.DateTimeField()
+    created_date = models.DateField(default=timezone.now)
+    ended_date = models.DateField()
     is_worked = models.BooleanField(default=True)
 
     def delete(self, *args, **kwargs):

@@ -1,16 +1,12 @@
-from django.shortcuts import render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect
 from .models import UploadModel
 from .forms import UploadForm
-from datetime import timedelta
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from background_task import background
 from django.utils import timezone
-from django.contrib import auth
-from django.urls import reverse
-from django.template.context_processors import csrf
 from django.contrib.auth import login, authenticate
+from datetime import timedelta, date
 
 
 def log_in(request):
@@ -62,13 +58,14 @@ def handler404(request):
 
 
 def add_new(request):
+    # print(date.today())
+    # print(date.today()-timedelta(days=10))
     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
     if form_upload.is_valid() and request.is_ajax():
         new_file = form_upload.save(commit=False)
         new_file.author = request.user
-        new_file.created_date = timezone.now()
-        print(new_file.ended_date, timezone.now())
-        if new_file.ended_date > timezone.now():
+        new_file.created_date = date.today()
+        if new_file.ended_date > date.today():
             new_file.is_worked = True
         else:
             new_file.is_worked = False
@@ -77,7 +74,3 @@ def add_new(request):
     form_upload = UploadForm()
     return render(request, 'sharing/index.html', {'form_upload': form_upload})
 
-
-@background(schedule=timedelta(minutes=20))
-def print_hello():
-    print('hello')

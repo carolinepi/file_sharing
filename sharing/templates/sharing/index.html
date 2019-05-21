@@ -12,7 +12,8 @@
 <script type="text/javascript" src="{% static 'sendform_upload.js' %}"></script>
 
 
-
+<script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+<link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
 <title>Home page</title>
 {% endblock %}
 
@@ -37,14 +38,18 @@
 
         <div class="form-group">
           <label>Ended date</label>
-            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
               {{ form_upload.ended_date }}
-              <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
-                <div class="input-group-text"><i class="fa fa-calendar"></i></div>
-              </div>
-            </div>
         </div>
 
+        <script>
+            var now = Date.now();
+
+            $('#datepicker').datepicker({
+                format:'yyyy-mm-dd'
+            });
+
+        </script>
+        <br>
         <div class="form-group">
           <label class="btn btn-default btn-file">
             {{ form_upload.file}}

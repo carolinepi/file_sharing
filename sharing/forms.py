@@ -17,8 +17,9 @@ class UploadForm(forms.ModelForm):
             attrs={
                 'class': 'form-control',
             }
-        ), 'ended_date': forms.DateTimeInput(
+        ), 'ended_date': forms.DateInput(
             attrs={
-                'class': 'datetime-input'
+                'id': 'datepicker',
+                'width': '100%'
             }
         )}
