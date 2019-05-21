@@ -1,11 +1,13 @@
 from django.shortcuts import render, redirect
 from .models import UploadModel
 from .forms import UploadForm
-from django.http import JsonResponse
 from django.utils import timezone
+from datetime import timedelta
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
+from background_task import background
+from django.utils import timezone
 
 
 def signup(request):
@@ -16,7 +18,10 @@ def signup(request):
             return redirect('index')
     else:
         form_signup = UserCreationForm()
-    return render(request, 'registration/signup.html', {'form_signup': form_signup})
+    if request.user.is_authenticated:
+        return redirect('index')
+    else:
+        return render(request, 'registration/signup.html', {'form_signup': form_signup})
 
 
 @login_required()
@@ -42,11 +47,15 @@ def add_new(request):
         new_file.created_date = timezone.now()
         print(new_file.ended_date, timezone.now())
         if new_file.ended_date > timezone.now():
-            print(True)
-        elif new_file.ended_date > timezone.now():
-            print(False)
+            new_file.is_worked = True
+        else:
+            new_file.is_worked = False
         new_file.save()
         return redirect('index')
     form_upload = UploadForm()
     return render(request, 'sharing/index.html', {'form_upload': form_upload})
 
+
+@background(schedule=timedelta(minutes=20))
+def print_hello():
+    print('hello')
