@@ -4,9 +4,8 @@ from .forms import UploadForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
-from django.utils import timezone
 from django.contrib.auth import login, authenticate
-from datetime import timedelta, date
+from datetime import date
 
 
 def log_in(request):
@@ -50,6 +49,8 @@ def show_files(request):
 
 def new_page(request, pk):
     file = get_object_or_404(UploadModel, pk=pk)
+    if not file.is_worked:
+        return render(request, 'error/404.html', status=404)
     return render(request, 'sharing/file_page.html', {'file': file})
 
 
@@ -58,8 +59,6 @@ def handler404(request):
 
 
 def add_new(request):
-    # print(date.today())
-    # print(date.today()-timedelta(days=10))
     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
     if form_upload.is_valid() and request.is_ajax():
         new_file = form_upload.save(commit=False)
