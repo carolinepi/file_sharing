@@ -19,12 +19,11 @@
 
 
 <div class="btn-group" role="group" aria-label="Basic example">
-  <button type="button" class="btn btn-secondary" onclick="changeSection('sectionAll')">All</button>
   <button type="button" class="btn btn-secondary" onclick="changeSection('sectionCurrent')">Current</button>
   <button type="button" class="btn btn-secondary" onclick="changeSection('sectionBlocked')">Blocked</button>
 </div>
 
-<table class="table table-hover table-dark">
+<table class="table table-hover table-dark" id="sectionCurrent">
   <thead>
     <tr>
       <th scope="col">Title</th>
@@ -34,22 +33,11 @@
     </tr>
   </thead>
 
-  <tbody id="sectionAll">
-  {% for post in file_posts|dictsortreversed:"id" %}
-    <tr>
-      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
-      <td>{{ post.file }}</td>
-      <td>{{ post.created_date }}</td>
-      <td>{{ post.ended_date }}</td>
-    </tr>
-  {% endfor %}
-  </tbody>
-
-  <tbody id="sectionCurrent">
+  <tbody>
   {% for post in file_posts|dictsortreversed:"id" %}
   {% if post.is_worked %}
     <tr>
-      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
+      <th scope="row"><a href="{% url 'file_page' post.id %}"> {{ post.title }}</a></th>
       <td>{{ post.file }}</td>
       <td>{{ post.created_date }}</td>
       <td>{{ post.ended_date }}</td>
@@ -57,20 +45,29 @@
   {% endif %}
   {% endfor %}
   </tbody>
+</table>
 
-  <tbody id="sectionBlocked">
+
+<table class="table table-hover table-dark" id="sectionBlocked">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Created date</th>
+      <th scope="col">Ended date</th>
+    </tr>
+  </thead>
+
+  <tbody>
   {% for post in file_posts|dictsortreversed:"id" %}
   {% if not post.is_worked %}
     <tr>
-      <th scope="row"><a href="{% url 'new_page' post.id %}"> {{ post.title }}</a></th>
-      <td>{{ post.file }}</td>
+      <th scope="row"><a href="{% url 'file_page' post.id %}"> {{ post.title }}</a></th>
       <td>{{ post.created_date }}</td>
       <td>{{ post.ended_date }}</td>
     </tr>
   {% endif %}
   {% endfor %}
   </tbody>
-
 </table>
 {% endblock %}
 

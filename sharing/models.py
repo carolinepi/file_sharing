@@ -14,7 +14,7 @@ class UploadModel(models.Model):
 
     def delete(self, *args, **kwargs):
         self.file.delete()
-        super().delete(*args, **kwargs)
+        # return super(UploadModel, self).delete(*args, **kwargs)
 
     def __str__(self):
         return self.title

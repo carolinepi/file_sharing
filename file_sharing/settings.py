@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sharing',
     'crispy_forms',
+    'django_crontab',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -135,15 +136,8 @@ LOGIN_REDIRECT_URL = 'index'
 
 LOGOUT_REDIRECT_URL = 'index'
 
+# Cron tasks
 
-# Celery application definition
-# http://docs.celeryproject.org/en/v4.0.2/userguide/configuration.html
-from celery.schedules import crontab
-
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_RESULT_BACKEND = 'redis://localhost:6379'
-CELERY_ACCEPT_CONTENT = ['application/json']
-CELERY_TASK_SERIALIZER = 'json'
-CELERY_RESULT_SERIALIZER = 'json'
-CELERY_TIMEZONE = 'Europe/Kiev'
-
+CRONJOBS = [
+    ('0 0 * * *', 'file_sharing.cron.delete_unuseful', '>> delete.log')
+]
