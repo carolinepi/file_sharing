@@ -1,11 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from .models import UploadModel
 from .forms import UploadForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import get_object_or_404
 from django.contrib.auth import login, authenticate
-from datetime import date, datetime
+from datetime import date
 
 
 def log_in(request):
@@ -34,7 +34,7 @@ def signup(request):
         form_signup = UserCreationForm(request.POST)
         if form_signup.is_valid():
             form_signup.save()
-            return redirect('index')
+            return redirect('log_in')
     else:
         form_signup = UserCreationForm()
     return render(request, 'registration/signup.html', {'form_signup': form_signup})
@@ -42,14 +42,16 @@ def signup(request):
 
 @login_required()
 def show_files(request):
-    """ Function returns all files, which user uploaded. """
+    """ Function returns all files, which user uploaded.
+    If user isn`t authenticated, the page isn`t available. """
 
     file_posts = UploadModel.objects.filter(author=request.user)
     return render(request, 'sharing/my_uploading.html', {'file_posts': file_posts})
 
 
 def file_page(request, pk):
-    """ Function returns page with file by PrimaryKey. If time is expired returns error 404. """
+    """ Function returns page with file by PrimaryKey.
+    If time is expired returns error 404. """
 
     file = get_object_or_404(UploadModel, pk=pk)
     if not file.is_worked:
@@ -69,16 +71,16 @@ def add_new(request):
     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
     if form_upload.is_valid() and request.is_ajax():
         new_file = form_upload.save(commit=False)
-        new_file.author = request.user
+        if request.user.is_authenticated:
+            new_file.instance.user = request.user
         new_file.created_date = date.today()
         new_file.is_worked = True
         if new_file.ended_date <= date.today():
-            print('Delete ' + new_file.title + ': ' + str(datetime.now()))
             new_file.is_worked = False
             new_file.delete()
         else:
             new_file.is_worked = True
         new_file.save()
-        return redirect('index')
+        return redirect('file_page', id=new_file.id)
     form_upload = UploadForm()
     return render(request, 'sharing/index.html', {'form_upload': form_upload})

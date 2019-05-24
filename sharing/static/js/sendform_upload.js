@@ -17,12 +17,13 @@ function upload(event) {
 
 function handleSuccess(data){
     $("form")[0].reset();
-    alert('Success uploading!');
+//    alert('Success uploading!');
 }
-function handleError(ThrowError){
-    console.log(ThrowError);
-    alert('Ohh, something wrong!');
-}
+//
+//function handleError(ThrowError){
+//    console.log(ThrowError);
+//    alert('Please, log in!');
+//}
 
 $(function() {
     $('form').submit(upload);

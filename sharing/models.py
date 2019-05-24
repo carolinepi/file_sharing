@@ -6,7 +6,7 @@ from datetime import date
 class UploadModel(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=100)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     file = models.FileField(upload_to='uploads/', blank=False, null=False)
     created_date = models.DateField(default=date.today())
     ended_date = models.DateField()
@@ -14,7 +14,6 @@ class UploadModel(models.Model):
 
     def delete(self, *args, **kwargs):
         self.file.delete()
-        # return super(UploadModel, self).delete(*args, **kwargs)
 
     def __str__(self):
         return self.title
