@@ -19,11 +19,11 @@ function handleSuccess(data){
     $("form")[0].reset();
 //    alert('Success uploading!');
 }
-//
-//function handleError(ThrowError){
-//    console.log(ThrowError);
-//    alert('Please, log in!');
-//}
+
+function handleError(ThrowError){
+    console.log(ThrowError);
+    alert('Please, log in or sign up!');
+}
 
 $(function() {
     $('form').submit(upload);

@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect
 from .models import UploadModel
 from .forms import UploadForm
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
@@ -71,8 +71,8 @@ def add_new(request):
     form_upload = UploadForm(request.POST, request.FILES, prefix='upload_form')
     if form_upload.is_valid() and request.is_ajax():
         new_file = form_upload.save(commit=False)
-        if request.user.is_authenticated:
-            new_file.instance.user = request.user
+        # if request.user.is_authenticated:
+        new_file.author = request.user
         new_file.created_date = date.today()
         new_file.is_worked = True
         if new_file.ended_date <= date.today():
@@ -81,6 +81,5 @@ def add_new(request):
         else:
             new_file.is_worked = True
         new_file.save()
-        return redirect('file_page', id=new_file.id)
     form_upload = UploadForm()
     return render(request, 'sharing/index.html', {'form_upload': form_upload})
