@@ -1,5 +1,5 @@
 crontab==0.22.5
-Django==2.1.7
+Django==2.2.13
 django_heroku
 django-alert==0.8.1
 django-background-tasks==1.2.0
