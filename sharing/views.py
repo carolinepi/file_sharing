@@ -59,7 +59,7 @@ def file_page(request, pk):
     return render(request, 'sharing/file_page.html', {'file': file})
 
 
-def handler404(request):
+def handler404(request, exception):
     """ Function returns error 404. """
 
     return render(request, 'error/404.html', status=404)
